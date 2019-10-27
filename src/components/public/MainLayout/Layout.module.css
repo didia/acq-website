@@ -1,0 +1,13 @@
+.wrapper {
+    backface-visibility: hidden;
+    transition: transform 0.5s ease;
+    padding-bottom: 1px;
+}
+
+.wrapper--nav-visible {
+    transform: translateX(275px);
+}
+
+.wrapper > :global(section) {
+    margin-bottom: 0;
+}

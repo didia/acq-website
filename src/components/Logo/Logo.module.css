@@ -1,0 +1,33 @@
+.logo {
+    border: 0;
+    font-family: 'Arvo';
+    font-weight: 700;
+    color: #ed786a;
+    text-shadow: 0.05em 0.075em 0 rgba(0, 0, 0, 0.1);
+    font-size: 3em;
+    letter-spacing: 13px;
+}
+
+.logo:hover {
+    color: #ed786a;
+    border-bottom-color: rgba(255, 255, 255, 0);
+    text-decoration: none;
+}
+
+.logo:hover :global(strong) {
+    color: #ed786a;
+}
+
+@media screen and (max-width: 1280px) {
+    .logo {
+        font-size: 2.5em;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .logo {
+        font-size: 2em;
+        letter-spacing: 8px;
+        line-height: 1.325em;
+    }
+}
