@@ -7,9 +7,9 @@ const netlifyCmsPaths = {
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Association des congolais et congolaises de Québec`,
+    description: `Bienvenue sur le site de l'Association des congolais et congolaises de Québec`,
+    author: `ACQ`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

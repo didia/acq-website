@@ -12,14 +12,19 @@ collections:
     create: true
     fields:
       - {name: title, label: Titre, widget: string}
-      - {name: excerpt, label: Extrait, widget: text}
+      - {name: excerpt, label: Resumé, widget: text}
       - {name: body, label: Contenu, widget: markdown}
       - {name: publication_date, label: Date de publication, widget: datetime}
       - {name: image, label: Image principale, widget: image, required: false}
-  - name: activities
+  - name: events
     label: Activités
     folder: content/activities
     create: true
     fields:
       - {name: title, label: Titre, widget: string}
+      - {name: excerpt, label: Resumé, widget: text}
+      - {name: body, label: Contenu, widget: markdown}
+      - {name: date, label: Date et Heure de l'évenement, widget: datetime}
+      - {name: address, label: Lieu de l'évenement, widget: map}
+      - {name: image, label: Image principale, widgetL image, required: false}
 
