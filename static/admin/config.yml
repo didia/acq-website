@@ -25,6 +25,5 @@ collections:
       - {name: excerpt, label: Resumé, widget: text}
       - {name: body, label: Contenu, widget: markdown}
       - {name: date, label: Date et Heure de l'évenement, widget: datetime}
-      - {name: address, label: Lieu de l'évenement, widget: map}
-      - {name: image, label: Image principale, widgetL image, required: false}
-
+      - {name: address, label: Lieu de l'évenement, widget: string}
+      - {name: image, label: Image principale, widget: image, required: false}
