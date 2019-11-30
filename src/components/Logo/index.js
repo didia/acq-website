@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import styles from './Logo.module.css';
+import React from "react";
+import { Link } from "gatsby";
+import styles from "./Logo.module.css";
 
 const Logo = () => (
   <Link to="/" className={styles.logo}>
