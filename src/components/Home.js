@@ -37,8 +37,6 @@ Erat lorem ipsum veroeros consequat magna tempus lorem ipsum consequat Phasellus
       }
     ];
 
-    // const firstArticle = news[0];
-    // const otherArticles = news.slice(1);
     const [firstArticle, ...otherArticles] = news;
 
     return [
