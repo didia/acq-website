@@ -1,12 +1,8 @@
-import React from 'react';
+import React from "react";
 
 class Admin extends React.Component {
   render() {
-    return (
-      <main>
-        Admin
-      </main>
-    )
+    return <main>Admin</main>;
   }
 }
 

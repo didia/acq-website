@@ -1,9 +1,9 @@
-import React from 'react';
-import classnames from 'classnames';
-import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
-import PropTypes from 'prop-types';
-import Logo from '../Logo';
-import styles from './AuthForm.module.css';
+import React from "react";
+import classnames from "classnames";
+import { Button, Form, FormGroup, Input, Label } from "reactstrap";
+import PropTypes from "prop-types";
+import Logo from "../Logo";
+import styles from "./AuthForm.module.css";
 
 class AuthForm extends React.Component {
   get isLogin() {
@@ -28,11 +28,11 @@ class AuthForm extends React.Component {
     const { buttonText } = this.props;
 
     if (!buttonText && this.isLogin) {
-      return 'Se connecter';
+      return "Se connecter";
     }
 
     if (!buttonText && this.isSignup) {
-      return 'S‘enregistrer';
+      return "S‘enregistrer";
     }
 
     return buttonText;
@@ -73,8 +73,10 @@ class AuthForm extends React.Component {
         )}
         <FormGroup check>
           <Label check>
-            <Input type="checkbox" />{' '}
-            {this.isSignup ? 'J‘accepte les conditions d‘utilisations' : 'Se souvenir de moi'}
+            <Input type="checkbox" />{" "}
+            {this.isSignup
+              ? "J‘accepte les conditions d‘utilisations"
+              : "Se souvenir de moi"}
           </Label>
         </FormGroup>
         <hr />
@@ -82,7 +84,8 @@ class AuthForm extends React.Component {
           size="lg"
           className="bg-gradient-theme-left border-0"
           block
-          onClick={this.handleSubmit}>
+          onClick={this.handleSubmit}
+        >
           {this.renderButtonText()}
         </Button>
 
@@ -107,8 +110,8 @@ class AuthForm extends React.Component {
   }
 }
 
-export const STATE_LOGIN = 'LOGIN';
-export const STATE_SIGNUP = 'SIGNUP';
+export const STATE_LOGIN = "LOGIN";
+export const STATE_SIGNUP = "SIGNUP";
 
 AuthForm.propTypes = {
   authState: PropTypes.oneOf([STATE_LOGIN, STATE_SIGNUP]).isRequired,
@@ -118,26 +121,26 @@ AuthForm.propTypes = {
   passwordLabel: PropTypes.string,
   passwordInputProps: PropTypes.object,
   confirmPasswordLabel: PropTypes.string,
-  confirmPasswordInputProps: PropTypes.object,
+  confirmPasswordInputProps: PropTypes.object
 };
 
 AuthForm.defaultProps = {
-  authState: 'LOGIN',
+  authState: "LOGIN",
   showLogo: true,
-  usernameLabel: 'Email',
+  usernameLabel: "Email",
   usernameInputProps: {
-    type: 'email',
-    placeholder: 'Entrez votre email',
+    type: "email",
+    placeholder: "Entrez votre email"
   },
-  passwordLabel: 'Mot de passe',
+  passwordLabel: "Mot de passe",
   passwordInputProps: {
-    type: 'password',
-    placeholder: 'Entrez votre mot de passe',
+    type: "password",
+    placeholder: "Entrez votre mot de passe"
   },
-  confirmPasswordLabel: 'Confirmer votre mot de passe',
+  confirmPasswordLabel: "Confirmer votre mot de passe",
   confirmPasswordInputProps: {
-    type: 'password',
-    placeholder: 'Entrer de nouveau votre mot de passe',
+    type: "password",
+    placeholder: "Entrer de nouveau votre mot de passe"
   }
 };
 
