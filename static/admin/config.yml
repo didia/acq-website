@@ -10,20 +10,24 @@ collections:
     label: Nouvelles
     folder: content/news
     create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {name: title, label: Titre, widget: string}
       - {name: excerpt, label: Resumé, widget: text}
       - {name: body, label: Contenu, widget: markdown}
       - {name: publication_date, label: Date de publication, widget: datetime}
-      - {name: image, label: Image principale, widget: image, required: false}
+      - {name: thumbnail, label: Image principale, widget: image, required: false}
+      - {name: draft, label: Brouillon, widget: boolean, default: true}
   - name: events
     label: Activités
     folder: content/activities
     create: true
+    slug: "{{slug}}"
     fields:
       - {name: title, label: Titre, widget: string}
       - {name: excerpt, label: Resumé, widget: text}
       - {name: body, label: Contenu, widget: markdown}
       - {name: date, label: Date et Heure de l'évenement, widget: datetime}
       - {name: address, label: Lieu de l'évenement, widget: string}
-      - {name: image, label: Image principale, widget: image, required: false}
+      - {name: thumbnail, label: Image principale, widget: image, required: false}
+      - {name: draft, label: Brouillon, widget: boolean, default: true}
