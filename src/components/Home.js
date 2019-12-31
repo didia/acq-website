@@ -7,6 +7,9 @@ import pic01 from "../images/pic01.jpg";
 import pic02 from "../images/pic02.jpg";
 import pic03 from "../images/pic03.jpg";
 import pic04 from "../images/pic04.jpg";
+import pic05 from "../images/pic05.jpg";
+import pic06 from "../images/pic06.jpg";
+import pic07 from "../images/pic07.jpg";
 
 const thumbnail = (thumbnail, defaultThumbnail) => thumbnail ? thumbnail.childImageSharp.fluid : defaultThumbnail.fluid;
 
@@ -14,6 +17,44 @@ const Home = ({news, activities, defaultNewsThumbnail}) => {
   const [firstNewsArticle, ...otherNewsArticles] = news.entries;
 
   console.log(defaultNewsThumbnail);
+  const act =[
+    {title: "YAMBI 2019",
+  excerpt: "header",
+  body:
+  "Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada in tristique. ",
+ 
+ image: pic04
+ 
+  },
+  
+  {title: "L'ACQ SE DOTTE D'UN NOUVEAU SITE WEB!",
+  excerpt:
+  "L'ACQ a un nouveau site web qui va augmenter la visibilité de l'association et permettre aux membres de consulter les nouvelles de la communauté ainsi les événements à venir.",
+  body:"header",
+  image: pic06,
+madate:"28 Decembre 2019"
+
+
+  },
+  {title: "YAMBI 2019 CE SAMEDI 29 DÉCEMBRE 2018",
+  excerpt:
+  "L'ACQ vous invite à l'événement YAMBI 2019 pour célébrer ensemble la fin d'année 2018 ainsi que la nouvelle année 2019 à venir.",
+  body:"header",
+  image: pic06,
+  madate:"28 Decembre 2019"
+  
+  },
+  {title: "LES CONGOLAIS DE LA DIASPORA NE VOTERONT PAS.",
+  excerpt:
+  "La commission electorale nationale indépendante (CENI) a décidé que les congolais de la diaspora ne voteront pas aux prochaines élections pour des raisons logistiques. ",
+  body:"header",
+  image: pic07,
+  madate:"28 Decembre 2019 "
+  },
+  ];
+  const [firstactivite, ...otheractivite] = act;
+
+
 
   return [
     <section key="header" id="header">
@@ -176,7 +217,7 @@ const Home = ({news, activities, defaultNewsThumbnail}) => {
       </div>
     </section>,
 
-    <section key="activities" id="main">
+    <section key="act" id="main">
       <div className="container">
         <div className="row">
           <div id="content" className="col-8 col-12-medium">
@@ -185,21 +226,11 @@ const Home = ({news, activities, defaultNewsThumbnail}) => {
                 <h2>Les activités à venir</h2>
               </header>
               <a href="#" className="image featured">
-                <img src={pic04} alt="" />
+                <img src={firstactivite.image} alt="" />
               </a>
-              <h3>YAMBI 2019</h3>
+              <h3>{firstactivite.title}</h3>
               <p>
-                Phasellus laoreet massa id justo mattis pharetra. Fusce
-                suscipit ligula vel quam viverra sit amet mollis tortor
-                congue. Sed quis mauris sit amet magna accumsan tristique.
-                Curabitur leo nibh, rutrum eu malesuada in, tristique at erat
-                lorem ipsum dolor sit amet lorem ipsum sed consequat magna
-                tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros
-                consequat magna tempus lorem ipsum consequat Phasellus laoreet
-                massa id justo mattis pharetra. Fusce suscipit ligula vel quam
-                viverra sit amet mollis tortor congue. Sed quis mauris sit
-                amet magna accumsan tristique. Curabitur leo nibh, rutrum eu
-                malesuada in tristique.
+              {firstactivite.body}
               </p>
               <ul className="actions">
                 <li>
@@ -214,62 +245,24 @@ const Home = ({news, activities, defaultNewsThumbnail}) => {
           <div id="sidebar" className="col-4 col-12-medium">
             <section>
               <ul className="divided">
-                <li>
+                {otheractivite.map(active =>( 
+                <li key={active.title}>
                   <article className="box excerpt">
                     <header>
-                      <span className="date">15 Mars 2019</span>
+                      <span className="date">{active.madate}</span>
                       <h3>
-                        <a href="#">L'ACQ se dotte d'un nouveau site web!</a>
+                        <a href="#">{active.title}</a>
                       </h3>
-                    </header>
-                    <p>
-                      L'ACQ a un nouveau site web qui va augmenter la
-                      visibilité de l'association et permettre aux membres de
-                      consulter les nouvelles de la communauté ainsi les
-                      événements à venir.
-                    </p>
-                  </article>
-                </li>
-                <li>
-                  <article className="box excerpt">
-                    <header>
-                      <span className="date">29 Décembre</span>
-                      <h3>
-                        <a href="#">YAMBI 2019 ce samedi 29 décembre 2018</a>
-                      </h3>
-                    </header>
-                    <p>
-                      L'ACQ vous invite à l'événement YAMBI 2019 pour célébrer
-                      ensemble la fin d'année 2018 ainsi que la nouvelle année
-                      2019 à venir.
-                    </p>
-                  </article>
-                </li>
-                <li>
-                  <article className="box excerpt">
-                    <header>
-                      <span className="date">24 Juillet</span>
-                      <h3>
-                        <a href="#">
-                          Les congolais de la diaspora ne voteront pas.
+                       </header>
+                    <a href="#" className="image left">
+                          <img src={active.image} alt="" />
                         </a>
-                      </h3>
-                    </header>
                     <p>
-                      La commission electorale nationale indépendante (CENI) a
-                      décidé que les congolais de la diaspora ne voteront pas
-                      aux prochaines élections pour des raisons logistiques.
+                    {active.excerpt}
                     </p>
                   </article>
-
-                  <ul className="actions">
-                    <li>
-                      <a href="#" className="button icon fa-file">
-                        Continuer à lire
-                      </a>
-                    </li>
-                  </ul>
                 </li>
+                ))}
               </ul>
             </section>
           </div>
