@@ -17,32 +17,27 @@ const Home = ({news, activities, defaultNewsThumbnail}) => {
   const [firstNewsArticle, ...otherNewsArticles] = news.entries;
 
   console.log(defaultNewsThumbnail);
+
   const act =[
     {title: "YAMBI 2019",
   excerpt: "header",
   body:
   "Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada in tristique. ",
- 
  image: pic04
- 
-  },
-  
+  }, 
   {title: "L'ACQ SE DOTTE D'UN NOUVEAU SITE WEB!",
   excerpt:
   "L'ACQ a un nouveau site web qui va augmenter la visibilité de l'association et permettre aux membres de consulter les nouvelles de la communauté ainsi les événements à venir.",
   body:"header",
   image: pic06,
 madate:"28 Decembre 2019"
-
-
-  },
+},
   {title: "YAMBI 2019 CE SAMEDI 29 DÉCEMBRE 2018",
   excerpt:
   "L'ACQ vous invite à l'événement YAMBI 2019 pour célébrer ensemble la fin d'année 2018 ainsi que la nouvelle année 2019 à venir.",
   body:"header",
   image: pic06,
   madate:"28 Decembre 2019"
-  
   },
   {title: "LES CONGOLAIS DE LA DIASPORA NE VOTERONT PAS.",
   excerpt:
