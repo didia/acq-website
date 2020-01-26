@@ -15,43 +15,9 @@ const thumbnail = (thumbnail, defaultThumbnail) => thumbnail ? thumbnail.childIm
 
 const Home = ({news, activities, defaultNewsThumbnail}) => {
   const [firstNewsArticle, ...otherNewsArticles] = news.entries;
-
-  console.log(defaultNewsThumbnail);
-
-  const act =[
-    {title: "YAMBI 2019",
-  excerpt: "header",
-  body:
-  "Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada in tristique. ",
- image: pic04
-  }, 
-  {title: "L'ACQ SE DOTTE D'UN NOUVEAU SITE WEB!",
-  excerpt:
-  "L'ACQ a un nouveau site web qui va augmenter la visibilité de l'association et permettre aux membres de consulter les nouvelles de la communauté ainsi les événements à venir.",
-  body:"header",
-  image: pic06,
-madate:"28 Decembre 2019"
-},
-  {title: "YAMBI 2019 CE SAMEDI 29 DÉCEMBRE 2018",
-  excerpt:
-  "L'ACQ vous invite à l'événement YAMBI 2019 pour célébrer ensemble la fin d'année 2018 ainsi que la nouvelle année 2019 à venir.",
-  body:"header",
-  image: pic06,
-  madate:"28 Decembre 2019"
-  },
-  {title: "LES CONGOLAIS DE LA DIASPORA NE VOTERONT PAS.",
-  excerpt:
-  "La commission electorale nationale indépendante (CENI) a décidé que les congolais de la diaspora ne voteront pas aux prochaines élections pour des raisons logistiques. ",
-  body:"header",
-  image: pic07,
-  madate:"28 Decembre 2019 "
-  },
-  ];
-  const [firstactivite, ...otheractivite] = act;
-
-
-
-  return [
+  const [firstActivity, ...otherActivities] = activities.entries;
+  console.log(firstActivity.thumbnail)
+return [
     <section key="header" id="header">
       <div className="container">
         <h1 id="logo">
@@ -220,40 +186,38 @@ madate:"28 Decembre 2019"
               <header>
                 <h2>Les activités à venir</h2>
               </header>
-              <a href="#" className="image featured">
-                <img src={firstactivite.image} alt="" />
+              <a href={firstActivity.path} className="image featured">
+                <Img fluid={thumbnail(firstActivity.thumbnail, defaultNewsThumbnail)} alt="" />
               </a>
-              <h3>{firstactivite.title}</h3>
-              <p>
-              {firstactivite.body}
-              </p>
-              <ul className="actions">
-                <li>
-                  <a href="#" className="button icon fa-file">
-                    Continuer à lire
-                  </a>
-                </li>
-              </ul>
+              <h3>{firstActivity.title}</h3>
+              <div dangerouslySetInnerHTML={{__html: firstActivity.content}} />
+              {activities.hasMore &&
+                <ul className="actions">
+                  <li>
+                    <a href="#" className="button icon fa-file">
+                      Voir toutes les nouvelles
+                    </a>
+                  </li>
+                </ul>
+              }
             </article>
           </div>
 
           <div id="sidebar" className="col-4 col-12-medium">
             <section>
               <ul className="divided">
-                {otheractivite.map(active =>( 
-                <li key={active.title}>
+                {otherActivities.map(activity =>( 
+                <li key={activity.title}>
                   <article className="box excerpt">
                     <header>
-                      <span className="date">{active.madate}</span>
+                      <span className="date">{activity.date}</span>
                       <h3>
-                        <a href="#">{active.title}</a>
+                      <a href={activity.path}>{activity.title}</a>
                       </h3>
                        </header>
-                    <a href="#" className="image left">
-                          <img src={active.image} alt="" />
-                        </a>
+                  
                     <p>
-                    {active.excerpt}
+                    {activity.excerpt}
                     </p>
                   </article>
                 </li>
