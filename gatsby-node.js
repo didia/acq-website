@@ -51,39 +51,39 @@ exports.onCreatePage = ({page, actions}) => {
 };
 
 exports.createPages = ({actions, graphql}) => {
-  // const {createPage} = actions;
-  //
-  // const mapping = {
-  //   [CONTENT_TYPE.NEWS]: path.resolve('src/templates/newsTemplate.js'),
-  //   [CONTENT_TYPE.ACTIVITY]: path.resolve('src/templates/activityTemplate.js'),
-  // };
-  //
-  // return graphql(`
-  //   {
-  //     allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, filter: {frontmatter: {draft: {ne: true}}}) {
-  //       edges {
-  //         node {
-  //           fields {
-  //             path
-  //             type
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `).then(result => {
-  //   if (result.errors) {
-  //     return Promise.reject(result.errors);
-  //   }
-  //
-  //   result.data.allMarkdownRemark.edges.forEach(({node}) => {
-  //     createPage({
-  //       path: node.fields.path,
-  //       component: mapping[node.fields.type],
-  //       context: {
-  //         type: node.fields.type
-  //       }
-  //     });
-  //   });
-  // });
+  const {createPage} = actions;
+
+  const mapping = {
+    [CONTENT_TYPE.NEWS]: path.resolve('src/templates/newsTemplate.js'),
+    [CONTENT_TYPE.ACTIVITY]: path.resolve('src/templates/activityTemplate.js'),
+  };
+
+  return graphql(`
+    {
+      allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, filter: {frontmatter: {draft: {ne: true}}}) {
+        edges {
+          node {
+            fields {
+              path
+              type
+            }
+          }
+        }
+      }
+    }
+  `).then(result => {
+    if (result.errors) {
+      return Promise.reject(result.errors);
+    }
+
+    result.data.allMarkdownRemark.edges.forEach(({node}) => {
+      createPage({
+        path: node.fields.path,
+        component: mapping[node.fields.type],
+        context: {
+          type: node.fields.type
+        }
+      });
+    });
+  });
 };

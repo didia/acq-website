@@ -4,6 +4,9 @@ backend:
 
 media_folder: static/media
 public_folder: /media
+slug:
+  encoding: ascii
+  clean_accents: true
 
 collections:
   - name: news
@@ -15,7 +18,7 @@ collections:
       - {name: title, label: Titre, widget: string}
       - {name: excerpt, label: Resumé, widget: text}
       - {name: body, label: Contenu, widget: markdown}
-      - {name: publication_date, label: Date de publication, widget: datetime}
+      - {name: date, label: Date de publication, widget: datetime}
       - {name: thumbnail, label: Image principale, widget: image, required: false}
       - {name: draft, label: Brouillon, widget: boolean, default: true}
   - name: events

@@ -6,17 +6,13 @@ import Logo from "./Logo/index";
 import pic01 from "../images/pic01.jpg";
 import pic02 from "../images/pic02.jpg";
 import pic03 from "../images/pic03.jpg";
-import pic04 from "../images/pic04.jpg";
-import pic05 from "../images/pic05.jpg";
-import pic06 from "../images/pic06.jpg";
-import pic07 from "../images/pic07.jpg";
 
 const thumbnail = (thumbnail, defaultThumbnail) => thumbnail ? thumbnail.childImageSharp.fluid : defaultThumbnail.fluid;
 
 const Home = ({news, activities, defaultNewsThumbnail}) => {
   const [firstNewsArticle, ...otherNewsArticles] = news.entries;
   const [firstActivity, ...otherActivities] = activities.entries;
-  console.log(firstActivity.thumbnail)
+
 return [
     <section key="header" id="header">
       <div className="container">
@@ -34,18 +30,18 @@ return [
               </Link>
             </li>
             <li>
-              <Link to="/" className="icon fa-users">
-                <span>À propos</span>
-              </Link>
-            </li>
-            <li>
-              <Link to="/" className="icon fa-calendar">
+              <Link to="#activites" className="icon fa-calendar">
                 <span>Activités</span>
               </Link>
             </li>
             <li>
-              <Link to="/" className="icon fa-newspaper-o">
+              <Link to="#nouvelles" className="icon fa-newspaper-o">
                 <span>Nouvelles</span>
+              </Link>
+            </li>
+            <li>
+              <Link to="#contact" className="icon fa-users">
+                <span>Contacts</span>
               </Link>
             </li>
           </ul>
@@ -53,7 +49,7 @@ return [
       </div>
     </section>,
 
-    <section key="features" id="features">
+    <section key="features" id="a-propos">
       <div className="container">
         <header>
           <h2>Pour une communauté vibrante!</h2>
@@ -95,7 +91,7 @@ return [
           <div className="col-12">
             <ul className="actions">
               <li>
-                <Link to="/register" className="button icon fa-user-plus">
+                <Link to="#contact" className="button icon fa-user-plus">
                   Dévenir member
                 </Link>
               </li>
@@ -105,14 +101,14 @@ return [
       </div>
     </section>,
 
-    <section key="banner-1" id="banner">
+    <section key="banner-1" className="banner">
       <div className="container">
         <p>« JUSTICE, PAIX, TRAVAIL »</p>
         <span>La dévise de la République démocratique du Congo.</span>
       </div>
     </section>,
 
-    <section key="news" id="main">
+    <section key="news" id="nouvelles" className="content-container">
       <div className="container">
         <div className="row">
           <div id="content" className="col-8 col-12-medium">
@@ -171,14 +167,14 @@ return [
       </div>
     </section>,
 
-    <section key="banner-2" id="banner">
+    <section key="banner-2" className="banner">
       <div className="container">
         <p>« DON DE DIEU FERAY VALOIR »</p>
         <span>La dévise de la ville de Québec.</span>
       </div>
     </section>,
 
-    <section key="act" id="main">
+    <section key="act" id="activites" className="content-container">
       <div className="container">
         <div className="row">
           <div id="content" className="col-8 col-12-medium">
@@ -206,7 +202,7 @@ return [
           <div id="sidebar" className="col-4 col-12-medium">
             <section>
               <ul className="divided">
-                {otherActivities.map(activity =>( 
+                {otherActivities.map(activity =>(
                 <li key={activity.title}>
                   <article className="box excerpt">
                     <header>
@@ -215,7 +211,7 @@ return [
                       <a href={activity.path}>{activity.title}</a>
                       </h3>
                        </header>
-                  
+
                     <p>
                     {activity.excerpt}
                     </p>
@@ -229,63 +225,38 @@ return [
       </div>
     </section>,
 
-    <section key="footer" id="footer">
+    <section key="footer" id="contact" className="footer">
       <div className="container">
         <header>
           <h2>
             Questions or commentaires? <strong>Contactez-nous:</strong>
           </h2>
         </header>
-        <div className="row">
-          <div className="col-6 col-12-medium">
-            <section>
-              <form method="post" action="#">
-                <div className="row gtr-50">
-                  <div className="col-6 col-12-small">
-                    <input name="name" placeholder="Nom" type="text" />
-                  </div>
-                  <div className="col-6 col-12-small">
-                    <input name="email" placeholder="Email" type="text" />
-                  </div>
-                  <div className="col-12">
-                    <textarea name="message" placeholder="Message" />
-                  </div>
-                  <div className="col-12">
-                    <a
-                      href="#"
-                      className="form-button-submit button icon fa-envelope"
-                    >
-                      Envoyer
-                    </a>
-                  </div>
-                </div>
-              </form>
-            </section>
-          </div>
-          <div className="col-6 col-12-medium">
+        <div className="contact-info-wrapper">
+          <div className="contact-info">
             <section>
               <div className="row">
                 <div className="col-6 col-12-small">
                   <ul className="icons">
+                    <li className="icon fa-phone">418-561-1966</li>
+                    <li className="icon fa-facebook">
+                      <a href="https://www.facebook.com/communautecongolaisequebec">
+                        Communauté Congolaise de Québec sur Facebook
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div className="col-6 col-12-small">
+                  <ul className="icons">
+                    <li className="icon fa-envelope">
+                      <a href="mailto:acq.conseil@yahoo.ca">acq.conseil@yahoo.ca</a>
+                    </li>
                     <li className="icon fa-home">
                       Limoilou
                       <br />
                       Québec, QC A1B 2C3
                       <br />
                       CANADA
-                    </li>
-                    <li className="icon fa-phone">418-561-1966</li>
-                    <li className="icon fa-envelope">
-                      <a href="#">acq.conseil@yahoo.ca</a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="col-6 col-12-small">
-                  <ul className="icons">
-                    <li className="icon fa-facebook">
-                      <a href="https://www.facebook.com/communautecongolaisequebec">
-                        Communauté Congolaise de Québec
-                      </a>
                     </li>
                   </ul>
                 </div>

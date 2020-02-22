@@ -3,7 +3,7 @@ title: 'Yambi 2019, ce samedi 28 décembre 2018'
 excerpt: >-
   L'ACQ vous invite à l'événement YAMBI 2019 pour célébrer ensemble la fin
   d'année 2018 ainsi que la nouvelle année 2019 à venir.
-publication_date: 2019-10-29T10:32:20.701Z
+date: 2019-10-29T10:32:20.701Z
 draft: false
 slug: yambi-2019-ce-samedi-28-décembre-2018
 ---

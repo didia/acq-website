@@ -4,7 +4,7 @@ excerpt: >-
   L'ACQ se dote d'un nouveau site web pour satisfaire les membres. Désormais
   toutes les informations et activités de l'ACQ seront disponibles sur notre
   site web.
-publication_date: 2019-10-29T10:02:29.181Z
+date: 2019-10-29T10:02:29.181Z
 thumbnail: /media/marvin-meyer-syto3xs06fu-unsplash.jpg
 draft: false
 slug: lacq-se-dote-dun-nouveau-site-web

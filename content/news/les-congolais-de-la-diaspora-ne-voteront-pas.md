@@ -4,7 +4,7 @@ excerpt: >-
   La commission electorale nationale indépendante (CENI) a décidé que les
   congolais de la diaspora ne voteront pas aux prochaines élections pour des
   raisons logistiques.
-publication_date: 2019-10-29T10:33:34.941Z
+date: 2019-10-29T10:33:34.941Z
 draft: false
 slug: les-congolais-de-la-diaspora-ne-voteront-pas
 ---
